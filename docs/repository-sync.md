@@ -3,7 +3,7 @@
 Sandboxer has two repositories:
 
 - Private development: https://github.com/pennytir/sandboxer
-- Public copy: https://github.com/postdated/sandboxer
+- Public copy: https://github.com/labsbytir/sandboxer
 
 After committing changes, run `npm run sync:repos` to push your local `main`
 and `staging` branches to both repositories. Preview with
