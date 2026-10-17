@@ -20,6 +20,7 @@
 - **Always-on controller:** Cloudflare Worker, D1 enrollment, fresh-heartbeat idle shutdown, explicit lifetime deadlines, and five-minute Markdown reports from Basin SQL into R2.
 - **Preview URLs:** proxied DNS and Let’s Encrypt DNS-01 certificates at `<environment-id>.tirbox.site`.
 - **Workspace snapshots:** upload working files and build artifacts to R2; the live filesystem remains on the server.
+- **Agent plugins:** native Hermes and OpenClaw tool adapters live in `plugins/`; see [agent plugin setup](docs/agent-plugins.md).
 
 **Private preview, not a production release.** Local checks and packaging are automated. Provider operations require your credentials and have not yet been verified against a live server. The controller is supplied as source and must be provisioned and deployed separately.
 
@@ -27,12 +28,12 @@
 
 Requires OpenChamber 2.4+, local SSH, and `kubectl` for Kubernetes operations. Built panel and service files are committed, so OpenChamber does not need to compile them.
 
-1. Clone this private repository with your GitHub identity.
+1. Clone this repository with your GitHub identity (the development repo is private; the public preview copy is [labsbytir/sandboxer](https://github.com/labsbytir/sandboxer)).
 2. Open **OpenChamber → Settings → Extensions**.
 3. Add the absolute path of this repository and approve its local service.
 4. Open **Sandboxer** on the right rail. Add `upcloud` in **Keys**.
 
-A Git installation can use `https://github.com/pennytir/sandboxer#staging` once OpenChamber’s Git identity has access. For the most predictable private-repository setup, use a local clone.
+A Git installation can use the private repo’s `#staging` branch, or the public `labsbytir/sandboxer#staging` mirror, once OpenChamber’s Git identity has access. For the most predictable private-repository setup, use a local clone.
 
 Follow [Setup](docs/setup.md) for the controller, credentials, remote connections, TLS, and backups.
 

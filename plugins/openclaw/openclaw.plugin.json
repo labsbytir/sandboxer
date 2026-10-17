@@ -1,0 +1,27 @@
+{
+  "id": "sandboxer",
+  "name": "Sandboxer",
+  "description": "Manage Sandboxer cloud environments through its local companion",
+  "categories": [
+    "developer-tools"
+  ],
+  "contracts": {
+    "tools": [
+      "sandboxer_read",
+      "sandboxer_action"
+    ]
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "toolMetadata": {
+    "sandboxer_action": {
+      "optional": true
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

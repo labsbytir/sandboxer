@@ -1,0 +1,4 @@
+{
+  "read": "^/(health|environments|servers|plans|images|templates|jobs|audit|controller|clusters|cluster-plans|reports/env-[a-f0-9]{16}|clusters/[a-f0-9-]{36}/(nodes|workloads))$",
+  "action": "^/(environments|environments/adopt|clusters|environments/env-[a-f0-9]{16}/(start|stop|restart|connect|deploy|refresh|server-key|dns|snapshot|enroll|tls)|clusters/[a-f0-9-]{36}/(logs|restart|scale|apply|upgrade|add-nodes))$"
+}

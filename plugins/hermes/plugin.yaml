@@ -1,0 +1,11 @@
+name: sandboxer
+version: 0.1.0
+description: Cloud environments, deployments, Kubernetes and reports via Sandboxer
+homepage: https://github.com/labsbytir/sandboxer
+provides_tools:
+  - sandboxer_read
+  - sandboxer_action
+requires_env:
+  - name: SANDBOXER_SERVICE_TOKEN
+    description: Bearer token for your local Sandboxer companion service
+    secret: true

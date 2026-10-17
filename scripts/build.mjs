@@ -2,6 +2,15 @@ import { build } from "esbuild";
 import { copyFile } from "node:fs/promises";
 await Promise.all([
   build({
+    entryPoints: ["plugins/openclaw/src/index.ts"],
+    bundle: true,
+    format: "esm",
+    platform: "node",
+    target: "node24",
+    external: ["openclaw/*", "typebox"],
+    outfile: "plugins/openclaw/dist/index.js",
+  }),
+  build({
     entryPoints: ["src/panel/main.ts"],
     bundle: true,
     format: "iife",

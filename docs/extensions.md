@@ -1,5 +1,7 @@
 # Extending Sandboxer
 
+For native Hermes and OpenClaw tool plugins, see [agent plugin setup](agent-plugins.md).
+
 The interfaces in `src/core/contracts.ts` are the initial extension contracts. This preview uses compiled-in adapters; a discoverable third-party plugin loader is not implemented yet. Do not assume dropping a manifest into a folder executes it.
 
 ## Adapter categories
