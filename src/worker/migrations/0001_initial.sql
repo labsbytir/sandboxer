@@ -1,0 +1,8 @@
+CREATE TABLE environments (
+ id TEXT PRIMARY KEY, server_id TEXT NOT NULL UNIQUE, token_hash TEXT NOT NULL,
+ idle_minutes INTEGER NOT NULL DEFAULT 0, last_seen INTEGER NOT NULL DEFAULT 0,
+ last_activity INTEGER NOT NULL DEFAULT 0, active_jobs INTEGER NOT NULL DEFAULT 1,
+ active_connections INTEGER NOT NULL DEFAULT 0, stop_at INTEGER,
+ stop_claim INTEGER NOT NULL DEFAULT 0, stopped INTEGER NOT NULL DEFAULT 0
+);
+CREATE TABLE audit (id TEXT PRIMARY KEY, timestamp TEXT NOT NULL, environment_id TEXT NOT NULL, action TEXT NOT NULL, status TEXT NOT NULL);

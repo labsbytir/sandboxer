@@ -1,0 +1,71 @@
+{
+  "name": "@pennytir/sandboxer",
+  "version": "0.1.0",
+  "description": "Cloud development environments in the OpenChamber sidebar",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.worker.json",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test && npm run build",
+    "dev": "tsx src/service/main.ts",
+    "controller:dev": "wrangler dev",
+    "controller:deploy": "wrangler deploy",
+    "controller:types": "wrangler types"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@openchamber/sdk": "^2.4.0",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261016.1",
+    "@types/node": "^26.6.5",
+    "esbuild": "^0.28.2",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.151.1"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pennytir/sandboxer.git"
+  },
+  "openchamber": {
+    "apiVersion": 1,
+    "engines": {
+      "openchamber": ">=2.4.0"
+    },
+    "contributes": {
+      "panel": {
+        "id": "sandboxer",
+        "name": "Sandboxer",
+        "icon": "assets/icon.svg",
+        "entry": "panel/index.html"
+      },
+      "page": true,
+      "capabilities": [
+        "sessions"
+      ],
+      "service": {
+        "entry": "service/main.cjs",
+        "runtime": "host",
+        "permissions": {
+          "exec": [
+            "ssh",
+            "git",
+            "kubectl",
+            "security",
+            "tar",
+            "gh"
+          ]
+        }
+      }
+    }
+  }
+}
