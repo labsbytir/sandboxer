@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "sync:repos": "node scripts/sync-repos.mjs",
     "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.worker.json",
     "test": "tsx --test tests/*.test.ts",
     "check": "npm run typecheck && npm run build && npm test",
